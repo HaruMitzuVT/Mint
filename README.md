@@ -1,3 +1,5 @@
+![Nova Mint OS](https://raw.githubusercontent.com/HaruMitzuVT/Mint/refs/heads/main/docs/banner.png)
+
 # Nova Mint OS
 
 Proyecto experimental.

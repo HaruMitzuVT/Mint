@@ -1,0 +1,16 @@
+# Node / Bun (en cualquier carpeta)
+node_modules/
+**/node_modules/
+
+# Builds
+dist/
+build/
+
+# Env
+.env
+.env.*
+
+# Editor
+.vscode/
+.idea/
+

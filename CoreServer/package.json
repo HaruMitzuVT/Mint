@@ -1,0 +1,19 @@
+{
+  "name": "mint-bridge",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "main.js",
+  "bin": "main.js",
+  "scripts": {
+    "dev": "node main.js",
+    "build": "pkg . --targets node18-linux-x64 --output dist/mint-bridge"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "systeminformation": "^5.21.0"
+  },
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "latest"
+  }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Nova Mint</title>
+	<link rel="shortcut icon" href="Assets/Mint.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="Snap/Snap.css">
+	<link rel="stylesheet" type="text/css" href="Snap/SnapUX_Anim.css">
+	<link rel="stylesheet" type="text/css" href="System/Base.css">
+	<script src="System/CloudSystem.js" type="module"></script>
+</head>
+<body>
+	<div class="background"></div>
+	<div class="Logon">
+		<div class="CM-login">
+		<div class="container-t">
+			<img src="Assets/Mint.png" alt="SystemIcon" class="logo">
+			<span class="htext">Sign into Nova Mint</span>
+			<div class="CM-sign">
+				<input class="usr CM-io" type="text" placeholder="Username">
+				<input class="pwssd CM-io" type="password" placeholder="Password">
+				<button class="sign snap-btn">Sign In</button>
+			</div>
+		</div>
+		<div class="container-r hidden">
+			<img src="Assets/Mint.png" alt="SystemIcon" class="logo">
+			<span class="htext">Register Local Account</span>
+			<div class="CM-sign">
+				<input class="usr CM-io" type="text" placeholder="Username">
+				<input class="pwssd CM-io" type="password" placeholder="Password">
+				<select name="Type" id="" class="CM-type">
+					<option value="Administrator">Administrator</option>
+					<option value="Standard">Standard</option>
+					<option value="Limited">Limited</option>
+				</select>
+				<button class="register snap-btn">Register</button>
+			</div>
+		</div>
+		</div>
+
+		<div class="status">
+			<span class="icon logon shutdown" title="Shutdown (Experiemntal)">power_settings_new</span>
+			<span class="icon logon restart" title="Restart Enviroment">restart_alt</span>
+			<span class="icon logon network static" title="Network Status">signal_wifi_bad</span>
+		</div>
+	</div>
+	<div class="desktop hidden">
+
+		<div class="taskbar">
+			<div class="mainmenu"></div>
+			<div class="dock"></div>
+			<div class="part">
+				<span class="tray icon vol">volume</span>
+				<span class="tray clock">00:00</span>
+				<div class="UserLogged">
+					<span class="user">Test User</span>
+					<span class="tray icon CM-logout">logout</span>
+				</div>
+			</div>
+		</div>
+		<div class="mixer-dock"></div>
+	</div>
+
+	<span class="dev">
+		Nova Mint (Beta Pre-Release 1)
+		Build 57 Version 0.5.3
+		Nova,LLC
+		This is a under construction System 
+		NOT use in production or publish to release 
+	</span>
+</body>
+</html>

@@ -146,3 +146,8 @@ GNU GPL v3
 * why Git WHY??????
 * Porque sigo escribiendo esto?
 * Si esto tiene errores tipograficos... ni me juzgues que no queria escribir esto en primer lugar (GitHub me obligo)
+
+## Screenshtos
+![Loggin Screen](https://raw.githubusercontent.com/Mittu-dev/Mint/refs/heads/main/docs/screenshots/Mint_Login.png?token=GHSAT0AAAAAADQNY4HKBAMHCCKX7YGUP2SE2KBWQZQ)
+![Desktop](https://raw.githubusercontent.com/Mittu-dev/Mint/refs/heads/main/docs/screenshots/Mint_Desktop.png?token=GHSAT0AAAAAADQNY4HKEBQO4AMHW2BTHH6W2KBWPZQ)
+![Desktop with Terminal](https://raw.githubusercontent.com/Mittu-dev/Mint/refs/heads/main/docs/screenshots/Mint_terminal.png?token=GHSAT0AAAAAADQNY4HLH7IQ3YTG6YBM4NG22KBWRTQ)

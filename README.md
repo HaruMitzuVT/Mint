@@ -5,7 +5,7 @@
 Proyecto experimental.
 
 Este repositorio existe principalmente para control de versiones.
-Contiene archivos internos del sistema Mint / Singapura.
+Contiene archivos internos del sistema Mint / Mint.
 
 No hay documentación completa.
 No hay garantías.
@@ -51,7 +51,7 @@ mover el compilado y darle permisos
 
     cp -r $WORKING_DIRECTORY/dist/linux-unpacked/* /opt/Mint/
 
-    chmod +x /opt/Mint/singapura
+    chmod +x /opt/Mint/mint
 
     #Si eres paranoico usa esto
     chmod -R 777 /opt/Mint/
@@ -79,7 +79,7 @@ After=network.target
 
 [Service]
 Type=simple
-User=singapura
+User=mint
 WorkingDirectory=/opt/Mint/home
 ExecStart=/opt/MintBridge/bridge
 Restart=always

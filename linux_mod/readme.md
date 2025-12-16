@@ -1,4 +1,4 @@
-![Nova Mint OS](https://raw.githubusercontent.com/Mittu-dev/Mint/refs/heads/main/docs/banner.png?token=GHSAT0AAAAAADQNY4HKKIWXVXZN2SIOTJJK2KBWNSQ)
+![Nova Mint OS](https://raw.githubusercontent.com/Mittu-dev/Mint/main/docs/banner.png)
 # Linux Mod
 
 Este directorio existe para Ayudar a crear una "Distro" de linux basada en **Arch Linux**

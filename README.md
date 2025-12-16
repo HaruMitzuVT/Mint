@@ -1,11 +1,11 @@
-![Nova Mint OS](https://raw.githubusercontent.com/Mittu-dev/Mint/refs/heads/main/docs/banner.png?token=GHSAT0AAAAAADQNY4HKKIWXVXZN2SIOTJJK2KBWNSQ)
+![Nova Mint OS](https://raw.githubusercontent.com/Mittu-dev/Mint/main/docs/banner.png)
 
-# Nova Mint OS
+# Mint Shell
 
 Proyecto experimental.
 
 Este repositorio existe principalmente para control de versiones.
-Contiene archivos internos del sistema Mint / Mint.
+Contiene archivos internos del sistema Mint.
 
 No hay documentación completa.
 No hay garantías.
@@ -35,12 +35,13 @@ Si no quieres sacrificar tu equipo recomiendo el uso de una VM.
 
 Descarga de **Arch Linux**
 * [Arch Linux](https://archlinux.org/download/#download-mirrors)
-* [Arch Liux Direct Mirror](https://mirrors.edge.kernel.org/archlinux/iso/2025.12.01/)
+* [Arch Linux Direct Mirror](https://mirrors.edge.kernel.org/archlinux/iso/2025.12.01/)
 ---
 
 ## Instalación
+Nota: Se asume que existe un usuario llamado ```mint``` de lo contrario usar el que tengas establecido en tu instalacion.
 
-Compilar el contenido de [CoreOS](https://github.com/HaruMitzuVT/Mint/tree/main/CoreOs) en Electron 
+Compilar el contenido de [CoreOS](https://github.com/Mittu-dev/Mint/tree/main/MintShell) en Electron 
 ```
     npm run build:linux
 ```
@@ -48,24 +49,22 @@ mover el compilado y darle permisos
 ```bash 
     #Si no tienes los directorios crealos
     mkdir -p /opt/Mint /opt/Mint/home /opt/Mint/addons /opt/MintBridge
+    chown mint:mint -R /opt/Mint
 
     cp -r $WORKING_DIRECTORY/dist/linux-unpacked/* /opt/Mint/
 
     chmod +x /opt/Mint/mint
-
-    #Si eres paranoico usa esto
-    chmod -R 777 /opt/Mint/
 ```
 
-Compilar el contenido de [CoreServer](https://github.com/HaruMitzuVT/Mint/tree/main/CoreServer) en Bun
+Compilar el contenido de [CoreServer](https://github.com/Mittu-dev/Mint/tree/main/MintBridge) en Bun
 ```
     bun build main.js --compile --target=bun-linux-x64 --outfile dist/bridge
 ```
 mover el compilado y darle permisos
 ```bash 
     cp $WORKING_DIRECTORY/dist/bridge /opt/MintBridge/bridge
+    chown -R mint:mint /opt/MintBridge
     chmod +x /opt/MintBridge/bridge
-    chmod -R 777 /opt/MintBridge/
 ```
 Crear el servicio del bridge
 ```bash 
@@ -74,7 +73,7 @@ Crear el servicio del bridge
 añadir esto a mint.service
 ```bash                                                              
 [Unit]
-Description=Nova Mint Bridge
+Description= Mint Bridge
 After=network.target
 
 [Service]
@@ -91,7 +90,7 @@ WantedBy=multi-user.target
 ```
 Registrar y activar el servicio
 ```bash 
-    sudo systemctl reload-daemon
+    sudo systemctl daemon-reload
     sudo systemctl enable mint
     sudo systemctl start mint
 ```
@@ -100,7 +99,7 @@ Verificar que salio todo bien
     sudo systemctl status mint
 
     # Debe salir algo como esto
-● mint.service - Nova Mint Bridge
+● mint.service - Mint Bridge
      Loaded: loaded (/etc/systemd/system/mint.service; enabled; preset: disabled)
      Active: active (running) since Sat 2025-12-13 18:55:49 CST; 51min ago
  Invocation: d72a0436b3674878939b0eb69ee707ac
@@ -111,28 +110,11 @@ Verificar que salio todo bien
      CGroup: /system.slice/mint.service
              └─6312 /opt/MintBridge/bridge
 
-dic 13 18:55:49 mint systemd[1]: Started Nova Mint Bridge.
-dic 13 18:55:49 mint bridge[6312]: Nova Mint Services running on http://localhost:1033
+dic 13 18:55:49 mint systemd[1]: Started Mint Bridge.
+dic 13 18:55:49 mint bridge[6312]: Mint Bridge Server running on http://localhost:1033
 dic 13 18:55:49 mint bridge[6312]: Mint User HOME   → /opt/Mint/home
 dic 13 18:55:49 mint bridge[6312]: Mint System ADDONS → /opt/Mint/home/addons
  
-```
-Compilar el contenido de [CoreUpdater](https://github.com/HaruMitzuVT/Mint/tree/main/CoreUpdater) en Bun (Opcional)
-
-**⚠️ Usar esto si vas a montar tu propio servidor de Actualizaciones de lo contrario solo ignoralo**
-
-```
-    bun build index.js --compile --target=bun-linux-x64 --outfile dist/updater
-
-```
-mover el compilado y darle permisos
-```bash 
-cp $WORKING_DIRECTORY/dist/updater /opt/updater
-
-
-    chmod +x updater
-
-    # Esto ya es experimental y no me hago responsable si llega a borrar la instalacion entera
 ```
 
 ## Licencia
@@ -147,7 +129,8 @@ GNU GPL v3
 * Porque sigo escribiendo esto?
 * Si esto tiene errores tipograficos... ni me juzgues que no queria escribir esto en primer lugar (GitHub me obligo)
 
-## Screenshtos
-![Loggin Screen](https://raw.githubusercontent.com/Mittu-dev/Mint/refs/heads/main/docs/screenshots/Mint_Login.png?token=GHSAT0AAAAAADQNY4HKBAMHCCKX7YGUP2SE2KBWQZQ)
-![Desktop](https://raw.githubusercontent.com/Mittu-dev/Mint/refs/heads/main/docs/screenshots/Mint_Desktop.png?token=GHSAT0AAAAAADQNY4HKEBQO4AMHW2BTHH6W2KBWPZQ)
-![Desktop with Terminal](https://raw.githubusercontent.com/Mittu-dev/Mint/refs/heads/main/docs/screenshots/Mint_terminal.png?token=GHSAT0AAAAAADQNY4HLH7IQ3YTG6YBM4NG22KBWRTQ)
+## Screenshots
+![Login Screen](https://raw.githubusercontent.com/Mittu-dev/Mint/main/docs/screenshots/Mint_Login.png)
+![Desktop](https://raw.githubusercontent.com/Mittu-dev/Mint/main/docs/screenshots/Mint_Desktop.png)
+![Desktop with Terminal](https://raw.githubusercontent.com/Mittu-dev/Mint/main/docs/screenshots/Mint_terminal.png)
+

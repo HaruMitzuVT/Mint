@@ -1,4 +1,4 @@
-// Nova Music
+// Mint Music
 import { WDM } from "../CloudBase.js"; // igual que en Terminal
 import { CommandManager } from "./Terminal.js"
 import { Journal } from "../Journal.js";  

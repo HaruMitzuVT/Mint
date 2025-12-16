@@ -1,10 +1,12 @@
 // Singapura Package Loader
+import { MintExplorer } from './prgm/Files.js';
 import { Terminit } from './prgm/Terminal.js';
 import { NovaMusic } from './prgm/Music.js';
 import { Journal } from "./Journal.js";
 
 async function SPL() {
     try {
+        new MintExplorer();
         Terminit();
         new NovaMusic();
         Journal.add("[SPL] Singapura Package Loader initialized successfully.");
